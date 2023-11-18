@@ -1,0 +1,27 @@
+-- First method using SUBSTR function --
+
+SELECT NAME FROM EMPLOYEES
+WHERE LOWER(SUBSTR(NAME,1,1)) IN ('a');
+
+-- Second method using LEFT function --
+
+SELECT NAME FROM EMPLOYEES
+WHERE LOWER(LEFT(NAME,1)) IN ('a');
+
+-- Third method using LIKE Operator --
+
+SELECT NAME FROM EMPLOYEES
+WHERE LOWER(NAME) LIKE 'a%';
+
+-- Fourth method using STARTSWITH function --
+SELECT NAME 
+FROM EMPLOYEES
+WHERE STARTSWITH (Lower(NAME), 'a');
+
+-- Documentation of the functions used --
+
+SUBSTR : https://docs.snowflake.com/en/sql-reference/functions/substr
+LEFT: https://docs.snowflake.com/en/sql-reference/functions/left
+LIKE : https://docs.snowflake.com/en/sql-reference/functions/like
+STARTSWITH : https://docs.snowflake.com/en/sql-reference/functions/startswith
+LOWER : https://docs.snowflake.com/en/sql-reference/functions/lower
